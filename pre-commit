@@ -1,0 +1,21 @@
+#!/bin/sh
+
+echo "precommit check started"
+echo "running the mocha tests"
+
+tests=`mocha -R json | jq ".stats.tests"`
+passes=`mocha -R json | jq ".stats.passes"`
+failures=`mocha -R json | jq ".stats.failures"`
+
+echo "Number of tests executed: $tests\nPassed: $passes\nFailed: $failures"
+
+if [ "$failures" -eq 0 ] 
+then
+  echo "All tests passed"
+else
+  echo "commit failed due to test failures"
+  exit 1
+fi
+
+echo "precommit finished successfully"
+exit 0
