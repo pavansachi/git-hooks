@@ -10,7 +10,7 @@ describe('Calculator', function() {
   });
   describe('add negative numbers()', function() {
     it('should return -5 when the value is -2 and -3', function() {
-      assert.equal(calc(-2,-3), -6);
+      assert.equal(calc(-2,-3), -5);
     });
   });
 });
