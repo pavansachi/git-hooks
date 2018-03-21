@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ci": "npm run test && npm run coverage",
+    "ci": "npm run test && npm run coverage && npm run sonarlint",
     "coverage": "./node_modules/istanbul/lib/cli.js cover calculator.js",
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha",
+    "sonarlint": "./node_modules/sonarlint/src/index.js --src calculator.js --tests test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
     "istanbul": "^0.4.5",
-    "mocha": "^5.0.4"
+    "mocha": "^5.0.4",
+    "sonarlint": "^1.1.0"
   }
 }
