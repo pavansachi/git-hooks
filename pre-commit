@@ -3,9 +3,9 @@
 echo "precommit check started"
 echo "running the mocha tests"
 
-tests=`mocha -R json | jq ".stats.tests"`
-passes=`mocha -R json | jq ".stats.passes"`
-failures=`mocha -R json | jq ".stats.failures"`
+tests=`./node_modules/mocha/bin/mocha -R json | jq ".stats.tests"`
+passes=`./node_modules/mocha/bin/mocha -R json | jq ".stats.passes"`
+failures=`./node_modules/mocha/bin/mocha -R json | jq ".stats.failures"`
 
 echo "Number of tests executed: $tests\nPassed: $passes\nFailed: $failures"
 
